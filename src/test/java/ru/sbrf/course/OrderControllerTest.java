@@ -40,7 +40,7 @@ public class OrderControllerTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        // mockedDiscountRegistry = mock(DiscountRegistry.class);
+//         mockedDiscountRegistry = mock(DiscountRegistry.class); // второй вариант создания
         orderController = new OrderController(mockedDiscountRegistry);
     }
 

@@ -12,15 +12,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.atLeast;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.inOrder;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyZeroInteractions;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MockListTest {
@@ -42,7 +34,7 @@ public class MockListTest {
         mockedList1.add("Called first");
         mockedList2.add("Called second");
 
-        InOrder inOrder = inOrder(mockedList1, mockedList2);
+        InOrder inOrder = inOrder(mockedList2, mockedList1);
 
         inOrder.verify(mockedList1).add("Called first");
         inOrder.verify(mockedList2).add("Called second");
@@ -54,12 +46,13 @@ public class MockListTest {
         mockedList.add("One");
         mockedList.add("Two");
         mockedList.add("Two");
+        mockedList.add("Four");
 
         // Verification
         verify(mockedList).add("One");
         verify(mockedList, times(2)).add("Two");
         verify(mockedList, never()).add("Three");
-        verify(mockedList, atLeast(3)).add(anyString());
+        verify(mockedList, atLeast(4)).add(anyString());
     }
 
     @Test

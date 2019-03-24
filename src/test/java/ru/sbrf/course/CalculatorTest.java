@@ -15,7 +15,6 @@ import static org.junit.Assert.assertEquals;
 @Category({SlowTests.class, FastTests.class})
 @RunWith(Parameterized.class)
 public class CalculatorTest {
-
     @Parameter
     public int a;
 
@@ -37,5 +36,4 @@ public class CalculatorTest {
     public void testAdd() throws Exception {
         assertEquals(expected, calculator.add(a, b));
     }
-
 }
