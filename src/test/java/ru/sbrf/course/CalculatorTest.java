@@ -1,5 +1,6 @@
 package ru.sbrf.course;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
@@ -27,10 +28,11 @@ public class CalculatorTest {
     private Calculator calculator = new Calculator();
 
     @Parameters
-    public static Iterable<Object[]> data() {
+    public static Iterable<Object[]> m() {
         return Arrays.asList(new Object[][]{{5, 2, 7}, {1, 1, 2}, {2, 1, 3}});
     }
 
+//    @Ignore("ignore testAdd")
     @Test
     public void testAdd() throws Exception {
         assertEquals(expected, calculator.add(a, b));

@@ -7,7 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Categories.class)
 @IncludeCategory(SlowTests.class)
-@SuiteClasses({CalculatorTest.class, OrderControllerTest.class})
+@SuiteClasses({CalculatorTest.class, OrderControllerTest.class, MockListTest.class})
 public class SlowTestsSuite {
     // OrderControllerTest.testAlwaysCheckItemDiscount + all tests in CalculatorTest
 }
